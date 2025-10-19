@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>University Enrollment Portal — Example (Accessible)</title>
+  <meta name="description" content="Accessible example of an university enrolment form (WCAG AA-focused).">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://placehold.co/48x48/1e3a8a/ffffff?text=U" alt="University logo" class="logo">
+        <h1 class="site-title">University Enrollment Portal</h1>
+      </div>
+
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#application">Application</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <h2 class="visually-hidden">Application and information</h2>
+
+    <section id="application" class="card" aria-labelledby="app-heading">
+      <h3 id="app-heading">Application Form</h3>
+
+      <form id="enrolment-form" novalidate>
+        <fieldset>
+          <legend class="legend">Step 1 — Personal details</legend>
+
+          <label for="full-name">Full legal name<span aria-hidden="true" class="required">*</span></label>
+          <input id="full-name" name="full-name" type="text" class="input-field" required aria-required="true" placeholder="e.g. Alex Smith">
+
+          <label for="email">Email address<span aria-hidden="true" class="required">*</span></label>
+          <input id="email" name="email" type="email" class="input-field" required aria-required="true" placeholder="you@example.com">
+
+          <p class="help">Required for application communications.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend class="legend">Step 2 — Course selection</legend>
+
+          <p class="label">Select up to 3 programs</p>
+          <div class="checkbox-list" role="group" aria-labelledby="programs-label">
+            <div><input id="cs" name="programs" type="checkbox" value="cs"><label for="cs">Computer Science</label></div>
+            <div><input id="me" name="programs" type="checkbox" value="me"><label for="me">Mechanical Engineering</label></div>
+            <div><input id="history" name="programs" type="checkbox" value="history"><label for="history">Ancient History</label></div>
+          </div>
+
+          <label for="entry-year">Entry year</label>
+          <select id="entry-year" name="entry-year" class="input-field">
+            <option value="">-- Select entry year --</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend class="legend">Step 3 — Scholarship eligibility</legend>
+
+          <div class="checkbox-inline">
+            <input id="fa" name="fa" type="checkbox">
+            <label for="fa">I have completed the FAFSA or equivalent.</label>
+          </div>
+
+          <div class="radio-inline" role="radiogroup" aria-labelledby="income-label">
+            <p id="income-label">Household income</p>
+            <div><input id="income-low" name="income" type="radio" value="low"><label for="income-low">Below regional median</label></div>
+            <div><input id="income-high" name="income" type="radio" value="high"><label for="income-high">Above regional median</label></div>
+          </div>
+
+          <label for="gpa">Current GPA</label>
+          <input id="gpa" name="gpa" type="text" class="input-field" placeholder="e.g. 3.8" aria-describedby="gpa-status">
+          <p id="gpa-status" aria-live="polite" class="status hidden">STATUS: Needs immediate review</p>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="primary-btn">Submit application</button>
+          <button type="button" class="secondary-btn" id="clear-status">Clear status</button>
+        </div>
+
+        <div id="submit-message" class="sr-only" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <aside class="sidebar" aria-labelledby="guide-heading" role="complementary">
+      <h3 id="guide-heading">Application guide</h3>
+      <div class="card">
+        <iframe title="Application video guide" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <p class="small">Watch our step-by-step guide to filling out your application.</p>
+      </div>
+
+      <div class="card" aria-labelledby="dates-heading">
+        <h4 id="dates-heading">Key dates</h4>
+        <p><strong>Priority deadline:</strong> December 15, 2025</p>
+        <img src="https://placehold.co/300x150/fde047/a78bfa?text=Deadline+12/15" alt="Calendar showing deadline December 15">
+      </div>
+
+      <div class="card" aria-labelledby="stats-heading">
+        <h4 id="stats-heading">Admission Statistics (2023)</h4>
+        <table class="stat-table" summary="Applicants and admitted numbers for programmes">
+          <thead>
+            <tr><th>Program</th><th>Applicants</th><th>Admitted</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Science</td><td>5,200</td><td>520</td></tr>
+            <tr><td>Arts</td><td>3,800</td><td>760</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+
+    <div class="warning card" role="region" aria-label="Quick links and resources">
+      <h4>Quick links & resources</h4>
+      <ul>
+        <li><a href="#calc">Financial Aid Calculators</a></li>
+        <li><a href="#faq">Admissions FAQ</a></li>
+        <li><a href="#housing">Student Housing Directory</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 University. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>\n
